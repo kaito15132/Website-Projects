@@ -56,7 +56,7 @@
 position: absolute;
 right: 0;
 top: 0;
-width: 5%;
+width: 3%;
 height: 100%;
 padding: 0;
 margin: 0;
@@ -72,4 +72,30 @@ opacity: 60%;
     top: 40px;
     font-size: 3em;
     text-shadow: 2px 2px 8px black;
+}
+
+.menu {
+    display: block;
+    width: 50%;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.social-links, .useful-links {
+    width: 80%;
+    margin: 5px auto;
+    text-align: center;
+    cursor: pointer;
+}
+
+.social-links {
+    position: relative;
+    top: 40%;
+    transform: translateY(-50%);
+}
+
+.useful-links {
+    position: relative;
+    top:70%;
+    transform: translateY(-70%);
 }
