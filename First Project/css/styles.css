@@ -99,3 +99,16 @@ opacity: 60%;
     top:70%;
     transform: translateY(-70%);
 }
+
+.button:hover {
+    -webkit-animation-name: button-highlight;  
+    -webkit-animation-duration: 2s;
+    border: 2px solid aqua; 
+}
+
+@-webkit-keyframes button-highlight {  
+    0% { border: 2px solid white; }
+    25% { border: 2px solid white; }
+    50% { border: 2px solid aqua; }
+    100% { border: 2px solid aqua; }
+  }
