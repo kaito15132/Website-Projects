@@ -61,7 +61,7 @@ height: 100%;
 padding: 0;
 margin: 0;
 background-color: black;
-opacity: 60%;
+opacity: 70%;
 }
 
 .content {
@@ -105,6 +105,11 @@ opacity: 60%;
     -webkit-animation-duration: 2s;
     border: 2px solid aqua; 
 }
+
+@keyframes color-move{
+    from {top: 0px;}
+    to {top: 200px;}
+  }
 
 @-webkit-keyframes button-highlight {  
     0% { border: 2px solid white; }
