@@ -1,0 +1,62 @@
+body {
+    background-color: /*#1d252f*/white;
+  }
+  h1 {
+    color: black;
+    font-weight: bold;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+
+  }
+  p {
+    color: red;
+  } 
+
+  button {
+      margin: 15px;
+  }
+
+  .ButtonContainer {
+    width: 80%;
+    height: 20%;
+    padding: 50px;
+    padding-top: 30px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+      
+  }
+
+  .CurrencyTable {
+    
+
+  }
+
+  table {
+    border: 1px solid red;
+    border-collapse: collapse;
+    padding: 20px;
+    width: 90%;
+    height: 60%;
+    margin: auto;
+    
+  }
+
+  th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    
+    margin:auto;
+    padding: 20px;
+    text-align: center;
+    
+  }
+
+  .nameCell {
+    width: 15%;
+  }
+
+  .convertCell {
+    width: 85%;
+  }
