@@ -3,10 +3,6 @@ body {
     background-color: rgba(50,52,69,255);
 }
 
-main {
-    margin-left: 15%;
-    margin-right: 15%;
-}
 
 /* Add a black background color to the top navigation */
 .topnav {
@@ -44,10 +40,15 @@ main {
     color: white;
   }
 
-  .test-bar {
+  h1 {
     width: 100%;
-    /*background-color: red;*/
-    
+    color: white;
+    font-size: 40px;
+    margin: 0;
+  }
+
+  h3, h2 {
+    color: white;
   }
 
 
@@ -55,6 +56,8 @@ main {
   section {
     background-color: rgba(35,37,51,255);
     height: 400px;
+    padding-left: 15%;
+    padding-right: 15%;
   }
 
   section:nth-child(odd){
@@ -64,4 +67,38 @@ main {
   section div {
     margin-top: auto;
     margin-bottom: auto;
+  }
+
+  .flex-container {
+    display: flex;
+  }
+
+  .flex-child {
+    flex: 1;
+    border: 2px solid;
+  }
+
+  .flex-child:first-child {
+    margin-right: 20px;
+  }
+
+  .skill-box {
+    color: white;
+    background-color: black;
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+  }
+
+  .grid-item {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    margin: 5px;
   }
