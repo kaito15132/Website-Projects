@@ -3,201 +3,215 @@
     <head>
         <title>Page Title</title>
         <link rel="stylesheet" href="css/mainstyles.css">
+        <script src="js/script.js"></script>
     </head>
     <body>
-        <h1>Title</h1>
+        <h1>Currency Calculator</h1>
         <section class="flex-container">
             <!--Currency buttons-->
             <div class="flex-child">
                 <!--Top Row-->
                 <div>
-                    <button>
+                    <button id="scroll-fragment" onclick="myCurrencyCheck('scroll-fragment');">
                         <img src="https://bit.ly/3kGXgLv" alt="Scroll Fragment">
                     </button>
-                    <button>
+                    <button id="scroll-of-wisdom" onclick="myCurrencyCheck('scroll-of-wisdom');">
                         <img src="https://bit.ly/3ESZIoL" alt="Scroll of Wisdom">
                     </button>
-                    <button>
+                    <button id="portal-scroll" onclick="myCurrencyCheck('portal-scroll');">
                         <img src="https://bit.ly/3ZEZQ3h" alt="Portal Scroll">
                     </button>
-                    <button>
+                    <button id="enkindling-orb" onclick="myCurrencyCheck('enkindling-orb');">
                         <img src="https://bit.ly/41X5EY2" alt="Enkindling Orb">
                     </button>
-                    <button>
+                    <button id="instilling-orb" onclick="myCurrencyCheck('instilling-orb');">
                         <img src="https://bit.ly/3mvTK6U" alt="Instilling Orb">
                     </button>
-                    <button>
+                    <button id="blacksmith-whetstone" onclick="myCurrencyCheck('blacksmith-whetstone');">
                         <img src="https://bit.ly/3ZkYQSf" alt="Blacksmith's Whetstone">
                     </button>
-                    <button>
+                    <button id="armourer-scrap" onclick="myCurrencyCheck('armourer-scrap');">
                         <img src="https://bit.ly/3Jdfptz" alt="Armourer's Scrap">
                     </button>
-                    <button>
+                    <button id="glassblower-bauble" onclick="myCurrencyCheck('glassblower-bauble');">
                         <img src="https://bit.ly/3kOXrnY" alt="Glassblower's Bauble">
                     </button>
-                    <button>
+                    <button id="gemcutter-prism" onclick="myCurrencyCheck('gemcutter-prism');">
                         <img src="https://bit.ly/3EWZZXS" alt="Gemcutter's Prism">
                     </button>
-                    <button>
+                    <button id="cartographer-chisel" onclick="myCurrencyCheck('cartographer-chisel');">
                         <img src="https://bit.ly/3ST0kAD" alt="Cartographer's Chisel">
                     </button>
                 </div>
                 <div>
-                    <button>
+                    <button id="transmutation" onclick="myCurrencyCheck('transmutation');">
                         <img src="https://bit.ly/3YmJBXu" alt="Orb of Transmutation">
                     </button>
-                    <button>
+                    <button id="alteration" onclick="myCurrencyCheck('alteration');">
                         <img src="https://bit.ly/3kQwLTW" alt="Orb of Alteration">
                     </button>
-                    <button>
+                    <button id="annulment" onclick="myCurrencyCheck('annulment');">
                         <img src="https://bit.ly/3yf0okE" alt="Orb of Annulment">
                     </button>
-                    <button>
+                    <button id="chance" onclick="myCurrencyCheck('chance');">
                         <img src="https://bit.ly/3EWsXam" alt="Orb of Chance">
                     </button>
-                    <button>
+                    <button id="exalted-orb" onclick="myCurrencyCheck('exalted-orb');">
                         <img src="https://bit.ly/3kURupr" alt="Exalted Orb">
                     </button>
-                    <button>
+                    <button id="mirror" onclick="myCurrencyCheck('mirror');">
                         <img src="https://bit.ly/3y9WIke" alt="Mirror of Kalandra">
                     </button>
-                    <button>
+                    <button id="regal-orb" onclick="myCurrencyCheck('regal-orb');">
                         <img src="https://bit.ly/3kNUFiQ" alt="Regal Orb">
                     </button>
-                    <button>
+                    <button id="alchemy-orb" onclick="myCurrencyCheck('alchemy-orb');">
                         <img src="https://bit.ly/3kISoFI" alt="Orb of Alchemy">
                     </button>
-                    <button>
+                    <button id="chaos-orb" onclick="myCurrencyCheck('chaos-orb');">
                         <img src="https://bit.ly/3Jev5Ni" alt="Chaos">
                     </button>
-                    <button>
+                    <button id="veiled-chaos-orb" onclick="myCurrencyCheck('veiled-chaos-orb');">
                         <img src="https://bit.ly/3IPdkCH" alt="Veiled Chaos Orb">
                     </button>
                 </div>
                 <div>
-                    <button>
+                    <button id="transmutation-shard" onclick="myCurrencyCheck('transmutation-shard');">
                         <img src="https://bit.ly/3ISMxp1" alt="Transmutation Shard">
                     </button>
-                    <button>
+                    <button id="alteration-shard" onclick="myCurrencyCheck('alteration-shard');">
                         <img src="https://bit.ly/3yfZnch" alt="Alteration Shard">
                     </button>
-                    <button>
+                    <button id="annulment-shard" onclick="myCurrencyCheck('annulment-shard');">
                         <img src="https://bit.ly/3IOvtRm" alt="Annulment Shard">
                     </button>
-                    <button>
+                    <button id="augmentation" onclick="myCurrencyCheck('augmentation');">
                         <img src="https://bit.ly/3KTOAfd" alt="Orb of Augmentation">
                     </button>
-                    <button>
+                    <button id="exalted-shard" onclick="myCurrencyCheck('exalted-shard');">
                         <img src="https://bit.ly/3ZEafMO" alt="Exalted Shard">
                     </button>
-                    <button>
+                    <button id="mirror-shard" onclick="myCurrencyCheck('mirror-shard');">
                         <img src="https://bit.ly/3kIuhqH" alt="Mirror Shard">
                     </button>
-                    <button>
+                    <button id="regal-shard" onclick="myCurrencyCheck('regal-shard');">
                         <img src="https://bit.ly/3YnPLqD" alt="Regal Shard">
                     </button>
-                    <button>
+                    <button id="alchemy-shard" onclick="myCurrencyCheck('alchemy-shard');">
                         <img src="https://bit.ly/3mtfCjk" alt="Alchemy Shard">
                     </button>
-                    <button>
+                    <button id="chaos-shard" onclick="myCurrencyCheck('chaos-shard');">
                         <img src="https://bit.ly/3JdUwOR" alt="Chaos Shard">
                     </button>
-                    <button>
+                    <button id="divine-orb" onclick="myCurrencyCheck('divine-orb');">
                         <img src="https://bit.ly/3ZE1hiz" alt="Divine Orb">
                     </button>
                 </div>
                 <div>
-                    <button></button>
-                    <button>
+                    <span class="empty"></span>
+                    <button id="jewelers-orb" onclick="myCurrencyCheck('jewelers-orb');">
                         <img src="https://bit.ly/3IQwkRx" alt="Jeweler's Orb">
                     </button>
-                    <button>
+                    <button id="fusing" onclick="myCurrencyCheck('fusing');">
                         <img src="https://bit.ly/3ZDqxW4" alt="Orb of Fusing">
                     </button>
-                    <button>
+                    <button id="chromatic" onclick="myCurrencyCheck('chromatic');">
                         <img src="https://bit.ly/41ICWd7" alt="Chromatic Orb">
                     </button>
-                    <button></button>
-                    <button></button>
-                    <button>
+                    <span class="empty"></span>
+                    <span class="empty"></span>
+                    <button id="awakened-sextant" onclick="myCurrencyCheck('awakened-sextant');">
                         <img src="https://bit.ly/3EXsrc2" alt="Awakened Sextant">
                     </button>
-                    <button>
+                    <button id="elevated-sextant" onclick="myCurrencyCheck('elevated-sextant');">
                         <img src="https://bit.ly/3IUmyxA" alt="Elevated Sextant">
                     </button>
-                    <button>
+                    <button id="harbinger-orb" onclick="myCurrencyCheck('harbinger-orb');">
                         <img src="https://bit.ly/3KYjOSG" alt="Harbinger's Orb">
                     </button>
-                    <button>
+                    <button id="horizon-orb" onclick="myCurrencyCheck('horizon-orb');">
                         <img src="https://bit.ly/3KXJ7UJ" alt="Orb of Horizon">
                     </button>
                 </div>
                 <div>
-                    <button>
+                    <button id="fracturing-orb" onclick="myCurrencyCheck('fracturing-orb');">
                         <img src="https://bit.ly/3INNYoN" alt="Fracturing Orb">
                     </button>
-                    <button>
+                    <button id="ancient-orb" onclick="myCurrencyCheck('ancient-orb');">
                         <img src="https://bit.ly/3ETlNni" alt="Ancient Orb">
                     </button>
-                    <button>
+                    <button id="binding-orb" onclick="myCurrencyCheck('binding-orb');">
                         <img src="https://bit.ly/3SS9M7C" alt="Binding Orb">
                     </button>
-                    <button>
+                    <button id="engineer-orb" onclick="myCurrencyCheck('engineer-orb');">
                         <img src="https://bit.ly/3EYR1tk" alt="Engineer's Orb">
                     </button>
-                    <button></button>
-                    <button></button>
-                    <button>
+                    <span class="empty"></span>
+                    <span class="empty"></span>
+                    <button id="regret-orb" onclick="myCurrencyCheck('regret-orb');">
                         <img src="https://bit.ly/3IPZJLx" alt="Orb of Regret">
                     </button>
-                    <button>
+                    <button id="unmaking-orb" onclick="myCurrencyCheck('unmaking-orb');">
                         <img src="https://bit.ly/3IIVMrO" alt="Orb of Unmaking">
                     </button>
-                    <button>
+                    <button id="harbinger-shard" onclick="myCurrencyCheck('harbinger-shard');">
                         <img src="https://bit.ly/41Pxky2" alt="Harbinger Shard">
                     </button>
-                    <button>
+                    <button id="horizon-shard" onclick="myCurrencyCheck('horizon-shard');">
                         <img src="https://bit.ly/3yvLNBP" alt="Horizon Shard">
                     </button>
                 </div>
                 <div>
-                    <button>
+                    <button id="fracturing-shard" onclick="myCurrencyCheck('fracturing-shard');">
                         <img src="https://bit.ly/3JeFEA4" alt="Fracturing Shard">
                     </button>
-                    <button>
+                    <button id="ancient-shard" onclick="myCurrencyCheck('ancient-shard');">
                         <img src="https://bit.ly/3Ykv7HJ" alt="Ancient Shard">
                     </button>
-                    <button>
+                    <button id="binding-shard" onclick="myCurrencyCheck('binding-shard');">
                         <img src="https://bit.ly/3Zl0QtJ" alt="Binding Shard">
                     </button>
-                    <button>
+                    <button id="engineer-shard" onclick="myCurrencyCheck('engineer-shard');">
                         <img src="https://bit.ly/3SQizGP" alt="Engineer Shard">
                     </button>
-                    <button></button>
-                    <button></button>
-                    <button>
+                    <span class="empty"></span>
+                    <span class="empty"></span>
+                    <button id="scouring-orb" onclick="myCurrencyCheck('scouring-orb');">
                         <img src="https://bit.ly/3EWQVm3" alt="Orb of Scouring">
                     </button>
-                    <button>
+                    <button id="sacred-orb" onclick="myCurrencyCheck('sacred-orb');">
                         <img src="https://bit.ly/3kNxaX7" alt="Sacred Orb">
                     </button>
-                    <button>
+                    <button id="blessed-orb" onclick="myCurrencyCheck('blessed-orb');">
                         <img src="https://bit.ly/3IUnFgK" alt="Blessed Orb">
                     </button>
-                    <button>
+                    <button id="vaal-orb" onclick="myCurrencyCheck('vaal-orb');">
                         <img src="https://bit.ly/3kLtB3E" alt="Vaal Orb">
                     </button>
-                </div>
-
-                
+                </div> 
             </div>
             <!--Table-->
             <div class="flex-child">
-
+                <table id="conversion-table">
+                    <tr>
+                        <th>First</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <span>10.3</span> 
+                                <img src="" class="selected-currency"/>
+                                <span>→</span> 
+                                <span>13</span> 
+                                <img src=""/>  
+                            </p>
+                        </td>
+                        <!--<td>-->
+                    </tr>
+                </table>
             </div>
         </section>
         <footer>
-
         </footer>
     </body>
 </html>
