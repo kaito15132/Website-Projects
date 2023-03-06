@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script type="module" src="js/script.js"></script>
+        
+    </head>
+    <body>
+        <div id="label">
+            Label
+        </div>
+        <button onclick="myFunction();">
+            Fetch
+        </button>
+        <script type="module">
+            // API for get requests
+fetch("https://api.poe.watch/get?category=armour&league=Sanctum")
+.then((response) => response.json())
+.then((data) => console.log(data.find( record => record.name === "Ghostwrithe").divine));
+
+        </script>
+    </body>
+</html>

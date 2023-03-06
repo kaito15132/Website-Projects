@@ -30,7 +30,7 @@ function addRow(id) {
     var cell = row.insertCell(0);
     cell.innerHTML = `
     <p>
-        <span>10.3</span>
+        <span>` + getPrice(id) + `</span>
         <img src="` +  setImages(collection[0].id) +`" class="default-image"/>
         <span>&rarr;</span>
         <span>13</span>
@@ -221,3 +221,25 @@ function setImages(id) {
 
     return newImage;
 }
+
+
+//API to call https://api.poe.watch/get?category=currency&league=Sanctum
+/*
+this call works
+
+fetch("https://api.poe.watch/get?category=armour&league=Sanctum")
+.then((response) => response.json())
+.then((data) => console.log(data.find( record => record.name === "Ghostwrithe").divine));
+
+*/
+async function getPrice(id) {
+
+fetch("https://api.poe.watch/get?category=armour&league=Sanctum")
+    .then((response) => response.json())
+    .then((data) => {
+        //price = data.find( record => record.name === "Ghostwrithe").divine;
+        console.log(data.find( record => record.name === "Ghostwrithe").divine); 
+});
+}
+
+
