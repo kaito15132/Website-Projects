@@ -1,5 +1,8 @@
 //check if an element was already selected. If it wasn't then a new currency will be selected
 //for conversion
+let currencyArr = []
+
+
 function myCurrencyCheck(id) {
     const elem = document.getElementById(id);
     //const collection = document.getElementsByClassName('possesed');
@@ -23,18 +26,34 @@ function myCurrencyCheck(id) {
     }
 }
 
-function addRow(id) {
+async function addRow(id) {
     const collection = document.getElementsByClassName('possessed');
+    const possessedImageSet = setImages(collection[0].id);
+    const desiredImageSet = setImages(id);
+
+    
+    //let response = await fetch("https://api.poe.watch/get?category=armour&league=Sanctum");
+    /*
+    let response = await fetch("https://api.poe.watch/get?category=currency&league=Sanctum");
+    let asyncResp = await response.json();
+    console.log(asyncResp);
+    let price = asyncResp.find( record => record.name === "Ghostwrithe").divine;
+    */
+
+    //check currency array for provided id, then output divine or exalted value to price variable
+    const possessed = 1;
+    const desiredPrice = calculateCurrentValue(collection[0].id, id);
+
     var table = document.getElementById("conversion-table");
     var row = table.insertRow(-1);
     var cell = row.insertCell(0);
     cell.innerHTML = `
     <p>
-        <span>` + getPrice(id) + `</span>
-        <img src="` +  setImages(collection[0].id) +`" class="default-image"/>
+        <span>${possessed}</span>
+        <img src="${possessedImageSet}" class="default-image"/>
         <span>&rarr;</span>
-        <span>13</span>
-        <img src="` +  setImages(id) +`" class="default-image"/>
+        <span>${desiredPrice}</span>
+        <img src="${desiredImageSet}" class="default-image"/>
     </p>`;
 }
 
@@ -72,31 +91,31 @@ function setImages(id) {
         case "instilling-orb":
             newImage = "https://bit.ly/3mvTK6U";
             break;
-        case "blacksmith-whetstone":
+        case "blacksmiths-whetstone":
             newImage = "https://bit.ly/3ZkYQSf";
             break;    
-        case "armourer-scrap":
+        case "armourers-scrap":
             newImage = "https://bit.ly/3Jdfptz";
             break;
-        case "glassblower-bauble":
+        case "glassblowers-bauble":
             newImage = "https://bit.ly/3kOXrnY";
             break; 
-        case "gemcutter-prism":
+        case "gemcutters-prism":
             newImage = "https://bit.ly/3EWZZXS";
             break; 
-        case "cartographer-chisel":
+        case "cartographers-chisel":
             newImage = "https://bit.ly/3ST0kAD";
             break; 
-        case "transmutation":
+        case "orb-of-transmutation":
             newImage = "https://bit.ly/3YmJBXu";
             break;
-        case "alteration":
+        case "orb-of-alteration":
             newImage = "https://bit.ly/3kQwLTW";
             break;
-        case "annulment":
+        case "orb-of-annulment":
             newImage = "https://bit.ly/3yf0okE";
             break;
-        case "chance":
+        case "orb-of-chance":
             newImage = "https://bit.ly/3EWsXam";
             break;
         case "exalted-orb":
@@ -108,7 +127,7 @@ function setImages(id) {
         case "regal-orb":
             newImage = "https://bit.ly/3kNUFiQ";
             break;
-        case "alchemy-orb":
+        case "orb-of-alchemy":
             newImage = "https://bit.ly/3kISoFI";
             break; 
         case "chaos-orb":
@@ -126,7 +145,7 @@ function setImages(id) {
         case "annulment-shard":
             newImage = "https://bit.ly/3IOvtRm";
             break;
-        case "augmentation":
+        case "orb-of-augmentation":
             newImage = "https://bit.ly/3KTOAfd";
             break;
         case "exalted-shard":
@@ -147,10 +166,10 @@ function setImages(id) {
         case "divine-orb":
             newImage = "https://bit.ly/3ZE1hiz";
             break; 
-        case "jewelers-orb":
+        case "jewellers-orb":
             newImage = "https://bit.ly/3IQwkRx";
             break;
-        case "fusing":
+        case "orb-of-fusing":
             newImage = "https://bit.ly/3ZDqxW4";
             break;
         case "chromatic":
@@ -222,24 +241,117 @@ function setImages(id) {
     return newImage;
 }
 
+async function populateCurrencyArray() {
+    let response = await fetch("https://api.poe.watch/get?category=currency&league=Sanctum");
+    let asyncResp = await response.json();
+    console.log(asyncResp);
+    
 
-//API to call https://api.poe.watch/get?category=currency&league=Sanctum
-/*
-this call works
+    for (var i in asyncResp) {
+        var item = asyncResp[i];
+        var newStringFormat = item.name.toLowerCase();
+        newStringFormat = newStringFormat.replace(/\s/g, '-');
+        newStringFormat = newStringFormat.replace(/'/g, '');
 
-fetch("https://api.poe.watch/get?category=armour&league=Sanctum")
-.then((response) => response.json())
-.then((data) => console.log(data.find( record => record.name === "Ghostwrithe").divine));
+        currencyArr.push({
+            "name" : newStringFormat,
+            "divineValue" : item.divine,
+            "exaltValue" : item.exalted,
+            "chaosValue" : item.mean
+        });
 
-*/
-async function getPrice(id) {
-
-fetch("https://api.poe.watch/get?category=armour&league=Sanctum")
-    .then((response) => response.json())
-    .then((data) => {
-        //price = data.find( record => record.name === "Ghostwrithe").divine;
-        console.log(data.find( record => record.name === "Ghostwrithe").divine); 
-});
+    }
 }
 
+//purpose is to get
+function calculateCurrentValue(possessedID, desiredID) {
+    //get divine value, chaos, and exalted value for calculations here
+    const div = currencyArr.find( record => record.name === "divine-orb").divineValue;
+    const ex = currencyArr.find( record => record.name === "exalted-orb").exaltValue;
+    const chaos = currencyArr.find( record => record.name === "chaos-orb").chaosValue;
+
+    //example: veiled chaos: 14  
+    //         chaos: 1
+    //         gemcutters: 1.55
+    let possessed = currencyArr.find( record => record.name === possessedID).chaosValue;
+    let desired = currencyArr.find( record => record.name === desiredID).chaosValue;
+
+    return possessed/desired;
+}
+
+
+
+//used to add currencies that aren't included in the api
+function addAdditionalCurr() {
+    const div = currencyArr.find( record => record.name === "divine-orb").divineValue;
+    const ex = currencyArr.find( record => record.name === "exalted-orb").exaltValue;
+    
+    currencyArr.push({
+        "name" : "mirror",
+        "divineValue" : 140200/div,
+        "exaltValue" :  140200/ex,
+        "chaosValue" : 140200
+    });
+    currencyArr.push({
+        "name" : "chaos-orb",
+        "divineValue" : 1/div,
+        "exaltValue" :  1/ex,
+        "chaosValue" : 1
+    });
+    currencyArr.push({
+        "name" : "scroll-fragment",
+        "divineValue" : .002/div,
+        "exaltValue" :  .002/ex,
+        "chaosValue" : .002
+    });
+    currencyArr.push({
+        "name" : "enkindling-orb",
+        "divineValue" : 1/div,
+        "exaltValue" :  1/ex,
+        "chaosValue" : 1
+    });
+    currencyArr.push({
+        "name" : "transmutation-shard",
+        "divineValue" : .35/div,
+        "exaltValue" :  .35/ex,
+        "chaosValue" : .35/20
+    });
+    currencyArr.push({
+        "name" : "alteration-shard",
+        "divineValue" : .08/div,
+        "exaltValue" :  .08/ex,
+        "chaosValue" : .08/20
+    });
+    currencyArr.push({
+        "name" : "mirror-shard",
+        "divineValue" : 7010/div,
+        "exaltValue" :  7010/ex,
+        "chaosValue" : 7010
+    });
+    currencyArr.push({
+        "name" : "regal-shard",
+        "divineValue" : 0.055/div,
+        "exaltValue" :  0.055/ex,
+        "chaosValue" : 0.055
+    });
+    currencyArr.push({
+        "name" : "alchemy-shard",
+        "divineValue" : 0.0065/div,
+        "exaltValue" :  0.0065/ex,
+        "chaosValue" : 0.0065
+    });
+    currencyArr.push({
+        "name" : "chaos-shard",
+        "divineValue" : 0.05/div,
+        "exaltValue" :  0.05/ex,
+        "chaosValue" : 0.05
+    });
+
+}
+
+populateCurrencyArray();
+setTimeout(function(){
+    addAdditionalCurr();
+}, 1000); 
+console.log(currencyArr);
 
