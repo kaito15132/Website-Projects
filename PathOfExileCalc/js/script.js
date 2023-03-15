@@ -35,18 +35,9 @@ async function addRow(id) {
     const possessedImageSet = setImages(collection[0].id);
     const desiredImageSet = setImages(id);
 
-    
-    //let response = await fetch("https://api.poe.watch/get?category=armour&league=Sanctum");
-    /*
-    let response = await fetch("https://api.poe.watch/get?category=currency&league=Sanctum");
-    let asyncResp = await response.json();
-    console.log(asyncResp);
-    let price = asyncResp.find( record => record.name === "Ghostwrithe").divine;
-    */
-
     //check currency array for provided id, then output divine or exalted value to price variable
-    const possessed = 1;
-    const desiredPrice = calculateCurrentValue(collection[0].id, id);
+    let possessed = document.getElementById('currency-number').value;
+    let desiredPrice = calculateCurrentValue(collection[0].id, id) * possessed;
 
     var table = document.getElementById("conversion-table");
     var row = table.insertRow(-1);
@@ -292,6 +283,7 @@ function addAdditionalCurr() {
     let fracturingVal = currencyArr.find( record => record.name === "fracturing-shard").chaosValue * 20;
     let bindingVal = currencyArr.find( record => record.name === "orb-of-binding").chaosValue / 20;
     let engineerVal = currencyArr.find( record => record.name === "engineers-orb").chaosValue / 20;
+    let horizonVal = currencyArr.find( record => record.name === "orb-of-horizons").chaosValue / 20;
 
     currencyArr.push({
         "name" : "mirror",
@@ -377,8 +369,26 @@ function addAdditionalCurr() {
         "exaltValue" :  80/ex,
         "chaosValue" : 80
     });
+    currencyArr.push({
+        "name" : "horizon-shard",
+        "divineValue" : horizonVal/div,
+        "exaltValue" :  horizonVal/ex,
+        "chaosValue" : horizonVal
+    });
 
 
+}
+
+//This function makes the slider and text field match
+function matchValue(id) {
+
+    if (id === "my-range") {
+        document.getElementById('currency-number').value = document.getElementById('my-range').value;
+        //textVal = sliderVal;
+    } else {
+        document.getElementById('my-range').value = document.getElementById('currency-number').value;
+    }
+    
 }
 
 populateCurrencyArray();

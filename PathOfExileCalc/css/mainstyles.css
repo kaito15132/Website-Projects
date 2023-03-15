@@ -110,10 +110,10 @@ button img {
   }
 
   .text-grid {
-    display:inline-flex;
   }
 
   .currency-text {
-    align-items: center;
+    position: relative;
+    top: -8px;
     
   }
