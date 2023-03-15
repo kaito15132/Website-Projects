@@ -21,8 +21,11 @@ function myCurrencyCheck(id) {
             clearTable();
             clearDesired();
         } else {
+            if (!elem.classList.contains('desired')){
+                addRow(id);
+            }
             elem.classList.toggle('desired');
-            addRow(id);
+            
         }
     } else {   
         elem.classList.toggle('possessed');
