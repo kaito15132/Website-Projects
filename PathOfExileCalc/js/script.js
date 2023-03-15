@@ -1,6 +1,10 @@
 //check if an element was already selected. If it wasn't then a new currency will be selected
 //for conversion
-let currencyArr = []
+let currencyArr = [];
+
+const formatter = new Intl.NumberFormat('en-US', {
+    maximumSignificantDigits: 4 
+});
 
 
 function myCurrencyCheck(id) {
@@ -172,7 +176,7 @@ function setImages(id) {
         case "orb-of-fusing":
             newImage = "https://bit.ly/3ZDqxW4";
             break;
-        case "chromatic":
+        case "chromatic-orb":
             newImage = "https://bit.ly/41ICWd7";
             break;
         case "awakened-sextant":
@@ -181,10 +185,10 @@ function setImages(id) {
         case "elevated-sextant":
             newImage = "https://bit.ly/3IUmyxA";
             break;
-        case "harbinger-orb":
+        case "harbingers-orb":
             newImage = "https://bit.ly/3KYjOSG";
             break;    
-        case "horizon-orb":
+        case "orb-of-horizons":
             newImage = "https://bit.ly/3KXJ7UJ";
             break;
         case "fracturing-orb":
@@ -193,19 +197,19 @@ function setImages(id) {
         case "ancient-orb":
             newImage = "https://bit.ly/3ETlNni";
             break; 
-        case "binding-orb":
+        case "orb-of-binding":
             newImage = "https://bit.ly/3SS9M7C";
             break; 
-        case "engineer-orb":
+        case "engineers-orb":
             newImage = "https://bit.ly/3EYR1tk";
             break;
-        case "regret-orb":
+        case "orb-of-regret":
             newImage = "https://bit.ly/3IPZJLx";
             break;
-        case "unmaking-orb":
+        case "orb-of-unmaking":
             newImage = "https://bit.ly/3IIVMrO";
             break;
-        case "harbinger-shard":
+        case "harbingers-shard":
             newImage = "https://bit.ly/41Pxky2";
             break;
         case "horizon-shard":
@@ -223,7 +227,7 @@ function setImages(id) {
         case "engineer-shard":
             newImage = "https://bit.ly/3SQizGP";
             break; 
-        case "scouring-orb":
+        case "orb-of-scouring":
             newImage = "https://bit.ly/3EWQVm3";
             break; 
         case "sacred-orb":
@@ -275,8 +279,8 @@ function calculateCurrentValue(possessedID, desiredID) {
     //         gemcutters: 1.55
     let possessed = currencyArr.find( record => record.name === possessedID).chaosValue;
     let desired = currencyArr.find( record => record.name === desiredID).chaosValue;
-
-    return possessed/desired;
+    console.log(formatter.format(possessed/desired));
+    return formatter.format(possessed/desired);
 }
 
 
@@ -285,7 +289,10 @@ function calculateCurrentValue(possessedID, desiredID) {
 function addAdditionalCurr() {
     const div = currencyArr.find( record => record.name === "divine-orb").divineValue;
     const ex = currencyArr.find( record => record.name === "exalted-orb").exaltValue;
-    
+    let fracturingVal = currencyArr.find( record => record.name === "fracturing-shard").chaosValue * 20;
+    let bindingVal = currencyArr.find( record => record.name === "orb-of-binding").chaosValue / 20;
+    let engineerVal = currencyArr.find( record => record.name === "engineers-orb").chaosValue / 20;
+
     currencyArr.push({
         "name" : "mirror",
         "divineValue" : 140200/div,
@@ -346,6 +353,31 @@ function addAdditionalCurr() {
         "exaltValue" :  0.05/ex,
         "chaosValue" : 0.05
     });
+    currencyArr.push({
+        "name" : "fracturing-orb",
+        "divineValue" : fracturingVal/div,
+        "exaltValue" :  fracturingVal/ex,
+        "chaosValue" : fracturingVal
+    });
+    currencyArr.push({
+        "name" : "binding-shard",
+        "divineValue" : bindingVal/div,
+        "exaltValue" :  bindingVal/ex,
+        "chaosValue" : bindingVal
+    });
+    currencyArr.push({
+        "name" : "engineer-shard",
+        "divineValue" : engineerVal/div,
+        "exaltValue" :  engineerVal/ex,
+        "chaosValue" : engineerVal
+    });
+    currencyArr.push({
+        "name" : "sacred-orb",
+        "divineValue" : 80/div,
+        "exaltValue" :  80/ex,
+        "chaosValue" : 80
+    });
+
 
 }
 
