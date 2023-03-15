@@ -115,7 +115,7 @@
                     <button id="orb-of-fusing" onclick="myCurrencyCheck('orb-of-fusing');">
                         <img src="https://bit.ly/3ZDqxW4" alt="Orb of Fusing">
                     </button>
-                    <button id="chromatic" onclick="myCurrencyCheck('chromatic');">
+                    <button id="chromatic-orb" onclick="myCurrencyCheck('chromatic-orb');">
                         <img src="https://bit.ly/41ICWd7" alt="Chromatic Orb">
                     </button>
                     <span class="empty"></span>
@@ -126,10 +126,10 @@
                     <button id="elevated-sextant" onclick="myCurrencyCheck('elevated-sextant');">
                         <img src="https://bit.ly/3IUmyxA" alt="Elevated Sextant">
                     </button>
-                    <button id="harbinger-orb" onclick="myCurrencyCheck('harbinger-orb');">
+                    <button id="harbingers-orb" onclick="myCurrencyCheck('harbingers-orb');">
                         <img src="https://bit.ly/3KYjOSG" alt="Harbinger's Orb">
                     </button>
-                    <button id="horizon-orb" onclick="myCurrencyCheck('horizon-orb');">
+                    <button id="orb-of-horizons" onclick="myCurrencyCheck('orb-of-horizons');">
                         <img src="https://bit.ly/3KXJ7UJ" alt="Orb of Horizon">
                     </button>
                 </div>
@@ -140,21 +140,21 @@
                     <button id="ancient-orb" onclick="myCurrencyCheck('ancient-orb');">
                         <img src="https://bit.ly/3ETlNni" alt="Ancient Orb">
                     </button>
-                    <button id="binding-orb" onclick="myCurrencyCheck('binding-orb');">
+                    <button id="orb-of-binding" onclick="myCurrencyCheck('orb-of-binding');">
                         <img src="https://bit.ly/3SS9M7C" alt="Binding Orb">
                     </button>
-                    <button id="engineer-orb" onclick="myCurrencyCheck('engineer-orb');">
+                    <button id="engineers-orb" onclick="myCurrencyCheck('engineers-orb');">
                         <img src="https://bit.ly/3EYR1tk" alt="Engineer's Orb">
                     </button>
                     <span class="empty"></span>
                     <span class="empty"></span>
-                    <button id="regret-orb" onclick="myCurrencyCheck('regret-orb');">
+                    <button id="orb-of-regret" onclick="myCurrencyCheck('orb-of-regret');">
                         <img src="https://bit.ly/3IPZJLx" alt="Orb of Regret">
                     </button>
-                    <button id="unmaking-orb" onclick="myCurrencyCheck('unmaking-orb');">
+                    <button id="orb-of-unmaking" onclick="myCurrencyCheck('orb-of-unmaking');">
                         <img src="https://bit.ly/3IIVMrO" alt="Orb of Unmaking">
                     </button>
-                    <button id="harbinger-shard" onclick="myCurrencyCheck('harbinger-shard');">
+                    <button id="harbingers-shard" onclick="myCurrencyCheck('harbingers-shard');">
                         <img src="https://bit.ly/41Pxky2" alt="Harbinger Shard">
                     </button>
                     <button id="horizon-shard" onclick="myCurrencyCheck('horizon-shard');">
@@ -174,9 +174,16 @@
                     <button id="engineer-shard" onclick="myCurrencyCheck('engineer-shard');">
                         <img src="https://bit.ly/3SQizGP" alt="Engineer Shard">
                     </button>
+                    <!--
                     <span class="empty"></span>
                     <span class="empty"></span>
-                    <button id="scouring-orb" onclick="myCurrencyCheck('scouring-orb');">
+                    -->
+                    <span class="text-grid">
+                        <input class="currency-text" type="text" id="name" name="name" required
+       minlength="4" maxlength="6" size="4">
+                    </span>
+                    
+                    <button id="orb-of-scouring" onclick="myCurrencyCheck('orb-of-scouring');">
                         <img src="https://bit.ly/3EWQVm3" alt="Orb of Scouring">
                     </button>
                     <button id="sacred-orb" onclick="myCurrencyCheck('sacred-orb');">
@@ -189,12 +196,16 @@
                         <img src="https://bit.ly/3kLtB3E" alt="Vaal Orb">
                     </button>
                 </div> 
+                <div class="slidecontainer">
+                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                </div>
             </div>
+            
             <!--Table-->
             <div class="flex-child">
                 <table id="conversion-table">
                     <tr>
-                        <th>First</th>
+                        <th>Conversions</th>
                     </tr>
                     <tr>
                         <!--rows are inserted here-->
