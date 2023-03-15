@@ -1,16 +1,14 @@
-//check if an element was already selected. If it wasn't then a new currency will be selected
-//for conversion
+
 let currencyArr = [];
 
 const formatter = new Intl.NumberFormat('en-US', {
     maximumSignificantDigits: 8 
 });
 
-
+//check if an element was already selected. If it wasn't then a new currency will be selected
+//for conversion
 function myCurrencyCheck(id) {
     const elem = document.getElementById(id);
-    //const collection = document.getElementsByClassName('possesed');
-
 
     //if there are elements selected
     if (document.getElementsByClassName('possessed').length != 0 ) {   
