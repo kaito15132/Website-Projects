@@ -1,10 +1,20 @@
 h1 {
+    height: 100px;
     font-weight: bolder;
     font-size: 40px;
     text-align: center;
+    vertical-align: middle;
+    margin-top: 0;
+    padding-top: 50px;
     margin-bottom: 50px;
     background-color: rgba(19,26,32,255);
+
     color: white;
+}
+
+section {
+  margin-left: 25%;
+  margin-right: 25%;
 }
 
 button img {
@@ -20,7 +30,6 @@ button img {
   position: fixed;
   top: 50%;
   bottom: 50%;
-  margin-left: 10%;
   display: grid;
   align-items: center;
   justify-content: center;
@@ -67,6 +76,7 @@ table {
   width: 60%;
   margin-left: auto;
   margin-right: auto;
+  
   color: white;
 }
 
@@ -118,10 +128,10 @@ td {
 .currency-text {
   position: relative;
   top: -8px;
-  
 }
 
 body {
   background-color: rgba(29,38,47,255);
-  min-width: 800px;
+  min-width: 1200px;
+  margin: 0;
 }
