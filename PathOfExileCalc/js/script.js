@@ -232,7 +232,6 @@ function setImages(id) {
             break;
         default:
     }
-
     return newImage;
 }
 
@@ -258,7 +257,7 @@ async function populateCurrencyArray() {
     }
 }
 
-//purpose is to get
+//This function's purpose is to calculate and return the conversion
 function calculateCurrentValue(possessedID, desiredID) {
     //get divine value, chaos, and exalted value for calculations here
     const div = currencyArr.find( record => record.name === "divine-orb").divineValue;
@@ -267,14 +266,13 @@ function calculateCurrentValue(possessedID, desiredID) {
 
     //example: veiled chaos: 14  
     //         chaos: 1
-    //         gemcutters: 1.55
+    //         gemcutters: 1.55.
+    //         1 veiled chaos orb = 14 chaos
     let possessed = currencyArr.find( record => record.name === possessedID).chaosValue;
     let desired = currencyArr.find( record => record.name === desiredID).chaosValue;
     console.log(formatter.format(possessed/desired));
     return formatter.format(possessed/desired);
 }
-
-
 
 //used to add currencies that aren't included in the api
 function addAdditionalCurr() {
