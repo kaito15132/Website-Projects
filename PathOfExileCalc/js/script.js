@@ -3,7 +3,7 @@
 let currencyArr = [];
 
 const formatter = new Intl.NumberFormat('en-US', {
-    maximumSignificantDigits: 4 
+    maximumSignificantDigits: 6 
 });
 
 
