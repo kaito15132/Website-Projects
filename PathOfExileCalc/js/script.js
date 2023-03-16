@@ -1,5 +1,6 @@
 
 let currencyArr = [];
+let lastDesiredValue = 0;
 
 const formatter = new Intl.NumberFormat('en-US', {
     maximumSignificantDigits: 8 
@@ -40,17 +41,21 @@ async function addRow(id) {
     let possessed = document.getElementById('currency-number').value;
     let desiredPrice = calculateCurrentValue(collection[0].id, id) * possessed;
 
-    var table = document.getElementById("conversion-table");
-    var row = table.insertRow(-1);
-    var cell = row.insertCell(0);
-    cell.innerHTML = `
-    <p>
-        <span>${possessed}</span>
-        <img src="${possessedImageSet}" class="default-image"/>
-        <span>&rarr;</span>
-        <span>${desiredPrice}</span>
-        <img src="${desiredImageSet}" class="default-image"/>
-    </p>`;
+    if (!(desiredPrice == lastDesiredValue)) {
+        var table = document.getElementById("conversion-table");
+        var row = table.insertRow(-1);
+        var cell = row.insertCell(0);
+        cell.innerHTML = `
+        <p>
+            <span>${possessed}</span>
+            <img src="${possessedImageSet}" class="default-image"/>
+            <span>&rarr;</span>
+            <span>${desiredPrice}</span>
+            <img src="${desiredImageSet}" class="default-image"/>
+        </p>`;
+    }
+    lastDesiredValue = desiredPrice;
+
 }
 
 function clearTable() {
