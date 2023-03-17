@@ -15,9 +15,9 @@ Currently there are two ways to do currency conversions in Path of Exile. You ei
 
 Process:
 The initial design for the project consists of currency buttons at the top with a full table of every currency in the game (https://bit.ly/3lajSEs) There are a couple of problems with this initial design and they are as follows:
-    1. Scrolling would become tedious as there is no intentionally organized elements. In other words, there is no specific order the currencies are placed in, which means that the user would be forced to ctrl + f or scroll until they see their desired currency. In a game where time efficiency is very important, this would be undesirable and inconvenient. 
-    2. There was no calculations being made beyond finding the current price. It would show current price of a currency and only compare it to another. There's no flexibility for quantity of currencies.
-    3. There are no fields or interactive elements that would allow a user to manipulate quantities.  
+1. Scrolling would become tedious as there is no intentionally organized elements. In other words, there is no specific order the currencies are placed in, which means that the user would be forced to ctrl + f or scroll until they see their desired currency. In a game where time efficiency is very important, this would be undesirable and inconvenient.
+2. There was no calculations being made beyond finding the current price. It would show current price of a currency and only compare it to another. There's no flexibility for quantity of currencies.
+3. There are no fields or interactive elements that would allow a user to manipulate quantities.  
 
 For the second design (https://bit.ly/3JoHZaa), I used a parallax approach to keep the currency buttons fixed in place while scrolling, which allows the user to see the currency menu at all times. I've also implemented scroll functionality and a text field that allows quantity changes. 
 
