@@ -1,3 +1,9 @@
+Instructions:
+1. Set the number of the currency you have by filling in the text field or using the scroll bar.
+2. Select the currency you have.
+3. Select any number of currencies you want to convert to.
+
+
 Case Study
 
 Challenge:
