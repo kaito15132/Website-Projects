@@ -1,11 +1,41 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 header {
     height: 300px;
+    width: 100%;
     background-image: url("../images/pattern.webp");
-    vertical-align: middle;
+    overflow: hidden;
+    margin-bottom: 80px;
 }
 
 header h1 {
+    font-size: 100px;
+    color: rgb(219, 184, 70);
+    margin: 50px auto;
     text-align: center;
-    color: red;
-    margin: auto;
+}
+
+h2 {
+    font-size: 40px;
+    color: white;
+}
+
+#brushes {
+    background-color: chartreuse;
+}
+
+#frames {
+    background-color: indianred;
+}
+
+#paint {
+    background-color: cornflowerblue;
+}
+
+strong {
+    color: blue;
+    font-style: ;
+    font-weight: bold;
 }
