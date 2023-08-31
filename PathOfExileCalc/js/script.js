@@ -242,7 +242,7 @@ function setImages(id) {
 }
 
 async function populateCurrencyArray() {
-    let response = await fetch("https://api.poe.watch/get?category=currency&league=Sanctum");
+    let response = await fetch("https://api.poe.watch/get?category=currency&league=Ancestor");
     let asyncResp = await response.json();
     console.log(asyncResp);
     
